@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Our Little Universe 🌌</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+
+<!-- =========================================
+     OPENING SCREEN
+========================================== -->
+
+<section
+    id="introScreen"
+    class="screen"
+>
+
+    <div class="intro">
+
+        <div class="moon">
+            🌙
+        </div>
+
+        <h1>
+            Welcome to a Little Universe
+        </h1>
+
+        <p>
+            I made this little universe especially for you.
+        </p>
+
+        <p class="small-text">
+            There are a few things hidden among the stars...
+        </p>
+
+        <button id="enterBtn">
+            ✨ Enter the Universe
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     UNIVERSE SCREEN
+========================================== -->
+
+<section
+    id="universeScreen"
+    class="screen universe-screen"
+>
+
+    <div class="stars"></div>
+
+    <div class="universe-content">
+
+        <p class="universe-title">
+            Somewhere in this universe...
+        </p>
+
+        <div class="planet">
+
+            <div class="planet-glow"></div>
+
+            <div class="planet-name">
+                MY FRIEND 🥰
+            </div>
+
+        </div>
+
+        <p class="instruction">
+            ✨ Click the glowing stars to discover something ✨
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MEMORY PUZZLE
+========================================== -->
+
+<div
+    id="puzzleModal"
+    class="puzzle-modal"
+>
+
+    <div class="puzzle-box">
+
+        <button
+            id="closePuzzle"
+            class="close-btn"
+        >
+            ✕
+        </button>
+
+        <h2>
+            🧩 A Memory Is Waiting...
+        </h2>
+
+        <p class="puzzle-subtitle">
+            Put the pieces together to discover it ✨
+        </p>
+
+        <div
+            id="puzzle"
+            class="puzzle"
+        ></div>
+
+        <p
+            id="puzzleStatus"
+            class="puzzle-status"
+        >
+            0 / 9 pieces
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     FRIENDSHIP QUESTION MODAL
+========================================== -->
+
+<div
+    id="questionModal"
+    class="question-modal"
+>
+
+    <div class="question-box">
+
+        <button
+            id="closeQuestion"
+            class="close-btn"
+        >
+            ✕
+        </button>
+
+        <div class="question-star">
+            ✨
+        </div>
+
+        <h2 id="questionTitle">
+            💙 Friendship Question
+        </h2>
+
+        <p id="questionText">
+            Question goes here...
+        </p>
+
+
+        <!-- A/B OPTIONS -->
+
+        <div
+            id="optionContainer"
+            class="option-container"
+        >
+
+            <button
+                id="optionA"
+                class="quiz-option"
+            >
+                A
+            </button>
+
+            <button
+                id="optionB"
+                class="quiz-option"
+            >
+                B
+            </button>
+
+        </div>
+
+
+        <!-- WRITTEN ANSWER -->
+
+        <div
+            id="writtenAnswerContainer"
+            class="written-answer-container"
+        >
+
+            <textarea
+                id="questionAnswer"
+                placeholder="Write your answer here... 💭"
+                rows="4"
+            ></textarea>
+
+            <button
+                id="submitAnswer"
+                class="submit-answer"
+            >
+                ✨ Submit Answer
+            </button>
+
+        </div>
+
+
+        <p
+            id="questionResult"
+            class="question-result"
+        ></p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     RESULT STICKER POPUP
+========================================== -->
+
+<div
+    id="resultPopup"
+    class="result-popup"
+>
+
+    <div
+        class="result-sticker"
+        id="resultSticker"
+    >
+        🥳
+    </div>
+
+    <h2 id="resultTitle">
+        HYY! You got it! 💖
+    </h2>
+
+    <p id="resultMessage">
+        I knew you would remember! ✨
+    </p>
+
+    <button id="resultContinue">
+        ✨ Continue
+    </button>
+
+</div>
+
+
+
+<!-- =========================================
+     MEMORY GALLERY PAGE
+========================================== -->
+
+<section id="memoryGallery">
+
+    <!-- Animated background twinkles -->
+    <div id="memoryStars"></div>
+
+    <div class="memory-content">
+
+        <div id="memoryLabel" class="memory-label">
+            THE BEGINNING
+        </div>
+
+        <h1 id="memoryTitle" class="memory-title">
+            Two Strangers ✨
+        </h1>
+
+        <!-- Special animation for each memory -->
+        <div id="memoryVisual" class="memory-visual">
+        </div>
+
+        <p id="memoryText" class="memory-text">
+            Somewhere in this huge universe,
+            two strangers crossed paths. ✨
+        </p>
+
+        <button
+            id="nextMemoryBtn"
+            class="memory-next-button"
+        >
+            ✨ Continue The Story
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- MEMORY VISUAL -->
+
+        <div
+            id="memoryPhoto"
+            class="memory-story-visual"
+        >
+        </div>
+
+
+        <!-- MEMORY EXTRA TEXT -->
+
+        <p
+            id="memoryExtra"
+            class="memory-extra"
+        ></p>
+
+        <!-- FINAL MEMORY BUTTON -->
+
+        <button
+            id="finalMessageBtn"
+            style="display: none;"
+        >
+            💌 Open My Last Message
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL MESSAGE PAGE
+========================================== -->
+
+<section id="finalMessagePage">
+
+    <div class="final-message-content">
+
+
+        <!-- FLOATING STARS -->
+
+        <div class="final-stars">
+            ✨ 💫 ⭐ 💖 ⭐ 💫 ✨
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1 class="final-page-title">
+            One Last Message 💌
+        </h1>
+
+
+        <p class="final-intro">
+
+            You found every star...<br>
+
+            You answered every question...<br>
+
+            And now you reached the last little surprise. 🥹✨
+
+        </p>
+
+
+
+        <!-- =====================================
+             ENVELOPE
+        ====================================== -->
+
+        <div
+            id="letterEnvelope"
+            class="letter-envelope"
+        >
+
+
+            <!-- BACK OF ENVELOPE -->
+
+            <div class="envelope-back"></div>
+
+
+            <!-- LETTER INSIDE -->
+
+            <div
+                id="letterPaper"
+                class="letter-paper"
+            >
+
+                <div class="letter-paper-inner">
+
+                    <span class="letter-small-title">
+                        A little letter for you 💙
+                    </span>
+
+
+                    <div
+                        class="letter-message"
+                        id="finalMessageText"
+                    >
+
+                        <p>
+                            Hyyy… 💫
+                        </p>
+
+                        <p>
+                            मुझे तुमसे कुछ कहना है…
+                        </p>
+
+                        <p>
+                            तुम्हें जन्मदिन की बहुत-बहुत बधाई, अभिलूऊ! 🎂🎉
+                        </p>
+
+                        <p>
+                            तुम मेरे लिए बहुत इम्पॉर्टेंट हो—पर सिर्फ एक फ्रेंड की तरह,
+                            रोमांटिक तरीके से नहीं। मैं ये इसलिए कह रही हूँ क्योंकि तुम
+                            थोड़ा ज़्यादा सोचते हो 😅, इसलिए मैं नहीं चाहती कि तुम कुछ
+                            गलत समझो।
+                        </p>
+
+                        <p>
+                            मैंने कभी नहीं सोचा था कि मैं किसी स्ट्रेंजर से बात करूँगी,
+                            इतनी क्लोज़ हो जाऊँगी, और तुम इतने स्पेशल बन जाओगे… 💛
+                        </p>
+
+                        <p>
+                            हाँ, मुझे थोड़ी जलन होती है जब तुम किसी और लड़की के बारे में
+                            बात करते हो। पर उसका कारण कुछ और नहीं है, बस मैं अपने फ्रेंड
+                            को किसी के साथ शेयर करना पसंद नहीं करती 🥺
+                        </p>
+
+                        <p>
+                            मुझे पता है तुम हैंडसम हो 😎, पर तुम इतने हैंडसम लगते हो
+                            उसका कारण ये है कि तुम मेरे फ्रेंड हो… बस, समझे? 😌
+                        </p>
+
+                        <p>
+                            मुझे तुम्हारी कंपनी और तुम्हारी फ्रेंडशिप बहुत पसंद है,
+                            इसलिए मुझे तुमसे बात करना हमेशा अच्छा लगता है 💬✨
+                        </p>
+
+                        <p>
+                            पर प्लीज़ मुझे भी समझने की कोशिश करो, जैसे मैं तुम्हें समझती हूँ।
+                            कभी-कभी अगर मैं बिज़ी होने की वजह से मैसेज नहीं कर पाती,
+                            तो प्लीज़ “ब्लॉक मी” जैसी बातें मत कहना… मुझे बहुत हर्ट होता है 💔
+                        </p>
+
+                        <p>
+                            मैं दिल से चाहती हूँ कि तुम अपनी लाइफ में सफल बनो।
+                            हमेशा खुश रहो और सेफ रहो, यार 🤗🌟
+                        </p>
+
+                        <p>
+                            तुम्हारे साथ बिताए हुए छोटे-छोटे पल, बातें, हंसी और यादों के लिए
+                            धन्यवाद… ✨
+
+                            <br><br>
+
+                            ज़िंदगी हमें कहीं भी ले जाए, मैं बस ये चाहती हूँ कि हमारी इस
+                            दोस्ती का एक छोटा सा हिस्सा हमेशा हमारे साथ रहे… 😻
+                        </p>
+
+                        <p class="final-love">
+                            तुम मेरे लिए सच में बहुत स्पेशल हो… 💖
+                        </p>
+
+                        <p>
+                            और फाइनली, एक बार फिर से—हैप्पी बर्थडे मेरे प्यारे दोस्त! 🎈🎂
+                        </p>
+
+                        <p class="final-love">
+                            और हमेशा… 🫶🫵
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ENVELOPE FRONT -->
+
+            <div class="envelope-front">
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-heart">
+                    💌
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OPEN LETTER BUTTON -->
+
+        <button
+            id="openLetterBtn"
+            class="open-letter-button"
+        >
+            💌 Open My Letter
+        </button>
+
+
+
+        <!-- MESSAGE AFTER OPENING -->
+
+        <p
+            id="letterOpenedText"
+            class="letter-opened-text"
+        >
+            💙 A little message from me to you 💙
+        </p>
+
+
+
+        <!-- HEART -->
+
+        <div class="final-heart">
+            💙
+        </div>
+
+
+
+        <!-- END -->
+
+        <p class="final-end">
+            Happy Birthday my frnd! 🎂✨
+        </p>
+
+
+
+        <!-- REPLAY -->
+
+        <button
+            id="replayUniverseBtn"
+            class="replay-button"
+        >
+            🌌 Replay ur Little Universe
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
